@@ -1,6 +1,6 @@
-package com.maerany.book.springboot.web.dto;
+package com.maerany.book.springboot.dto;
 
-import com.maerany.book.springboot.web.web.dto.HelloResponseDto;
+import com.maerany.book.springboot.web.dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

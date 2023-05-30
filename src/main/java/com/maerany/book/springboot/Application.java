@@ -1,4 +1,4 @@
-package com.maerany.book.springboot.web;
+package com.maerany.book.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

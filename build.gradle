@@ -28,6 +28,13 @@ repositories{
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.projectlombok:lombok')
+
+    //JPA : java persistence api < Hibernate < Spring Data JPA
+    // springboot용 spring data jpa 추상화 라이브러리
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    // in-memory RDB : 메모리에서 실행돠며 테스트 용도로 많이 사용됨
+    implementation('com.h2database:h2')
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
