@@ -11,6 +11,10 @@ import javax.persistence.*;
 @Entity
 public class Posts {
 
+    // 해당 class는 Entity 클래스임
+    // Entity 클래스와 Response/Request 클래스와는 달리 사용되어야 됨 (용도가 다름)
+    // Entity 클래는 DB와 맞닿은 핵심 class
+    // Entity 클래스를 기준으로 table이 생성되고, schema가 변경된다
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
