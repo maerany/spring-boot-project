@@ -3,7 +3,6 @@ var main= {
     init : function(){
         var _this = this;
         $('#btn-save').on('click', function(){
-            console.log('나오니?');
            _this.save();
         });
     },
@@ -31,4 +30,3 @@ var main= {
 
 
 main.init();
-console.log('gg');

@@ -2,12 +2,16 @@ package com.maerany.book.springboot.service.posts;
 
 import com.maerany.book.springboot.domain.posts.Posts;
 import com.maerany.book.springboot.domain.posts.PostsRepository;
+import com.maerany.book.springboot.web.dto.PostsListResponseDto;
 import com.maerany.book.springboot.web.dto.PostsResponseDto;
 import com.maerany.book.springboot.web.dto.PostsSaveRequestDto;
 import com.maerany.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -48,4 +52,19 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 
+    // readOnly를 하는 이유는, 트랜잭션 범위는 유지하되 조회 기능만 남겨두어 속도 개선에 영향을 준다.
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+
+        /*
+         * [ 람다식 ] --> .map(PostsListReponseDto::new)
+         *
+         *  .map(posts -> new PostsListReponseDto(posts))
+         * postsRepository 결과로 넘어온 Posts의 Stream을 map을 통해
+         * PostsListResponseDto변환 후 List로 반환하는 메소드
+         */
+    }
 }
