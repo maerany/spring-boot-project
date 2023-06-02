@@ -34,6 +34,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     // in-memory RDB : 메모리에서 실행돠며 테스트 용도로 많이 사용됨
     implementation('com.h2database:h2')
+    // Mustache 스타터 의존성 등록
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
