@@ -1,5 +1,6 @@
 package com.maerany.book.springboot.domain.posts;
 
+import com.maerany.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     // 해당 class는 Entity 클래스임
     // Entity 클래스와 Response/Request 클래스와는 달리 사용되어야 됨 (용도가 다름)
